@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shubham ❤️ Shweta</title>
+
+<style>
+
+body{
+margin:0;
+font-family:'Segoe UI',sans-serif;
+background:linear-gradient(135deg,#ff4f9a,#7b2ff7);
+color:white;
+text-align:center;
+overflow:hidden;
+}
+
+.page{
+display:none;
+height:100vh;
+padding:40px 20px;
+box-sizing:border-box;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+}
+
+.active{
+display:flex;
+}
+
+h1{
+font-size:42px;
+}
+
+p{
+font-size:22px;
+max-width:700px;
+line-height:1.7;
+}
+
+button{
+padding:15px 30px;
+border:none;
+border-radius:30px;
+font-size:20px;
+margin:15px;
+cursor:pointer;
+background:white;
+color:#ff2f7d;
+font-weight:bold;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.1);
+}
+
+.heart{
+position:absolute;
+animation:float 4s linear infinite;
+font-size:25px;
+}
+
+@keyframes float{
+from{
+transform:translateY(100vh);
+}
+to{
+transform:translateY(-10vh);
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="page active">
+
+<h1>Welcome Madam High Court 👩‍⚖️❤️</h1>
+
+<p>
+Today’s case:  
+Shubham vs Your Smile 😂
+</p>
+
+<button onclick="next()">
+Start Hearing 💖
+</button>
+
+</div>
+
+<div class="page">
+
+<h1>Question 1 🤔</h1>
+
+<p>
+Who is the cutest person in this world?
+</p>
+
+<button onclick="wrong()">
+Me 😎
+</button>
+
+<button onclick="next()">
+You, obviously ❤️
+</button>
+
+</div>
+
+<div class="page">
+
+<h1>Correct Answer 😍</h1>
+
+<p>
+You are my cutest baccha,  
+my jaan, my peace, and my favorite problem forever.
+</p>
+
+<button onclick="next()">
+Continue 🥺
+</button>
+
+</div>
+
+<div class="page">
+
+<h1>Chocolate Alert 🍫</h1>
+
+<p>
+I came to know you love chocolates…  
+so I decided I will make your life sweeter than chocolate.
+</p>
+
+<button onclick="next()">
+More Sweetness 🍫
+</button>
+
+</div>
+
+<div class="page">
+
+<h1>Crazy Truth 😂</h1>
+
+<p>
+If loving you is a crime,  
+then I am ready for lifetime imprisonment in your heart ❤️
+</p>
+
+<button onclick="next()">
+Final Surprise ✨
+</button>
+
+</div>
+
+<div class="page">
+
+<h1>I Love You ❤️</h1>
+
+<p>
+You are not just my future wife.  
+You are my smile, my home, my forever, and my destiny.
+</p>
+
+<button onclick="love()">
+Click for Magic ✨
+</button>
+
+</div>
+
+<script>
+
+let pages=document.querySelectorAll(".page");
+
+let index=0;
+
+function next(){
+
+pages[index].classList.remove("active");
+
+index++;
+
+pages[index].classList.add("active");
+
+}
+
+function wrong(){
+
+alert("Wrong answer 😂 Try again Madam!");
+
+}
+
+function love(){
+
+document.body.innerHTML = `
+
+<style>
+
+body{
+margin:0;
+overflow:hidden;
+font-family:'Segoe UI',sans-serif;
+background:black;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+flex-direction:column;
+color:white;
+text-align:center;
+}
+
+h1{
+font-size:70px;
+animation:pulse 1s infinite;
+margin-bottom:20px;
+}
+
+p{
+font-size:28px;
+max-width:800px;
+line-height:1.7;
+padding:20px;
+}
+
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.15);}
+100%{transform:scale(1);}
+}
+
+.heart{
+position:absolute;
+font-size:30px;
+animation:float2 5s linear infinite;
+}
+
+@keyframes float2{
+0%{
+transform:translateY(100vh) rotate(0deg);
+opacity:1;
+}
+100%{
+transform:translateY(-10vh) rotate(360deg);
+opacity:0;
+}
+}
+
+#loveBtn{
+padding:18px 40px;
+border:none;
+border-radius:40px;
+font-size:22px;
+cursor:pointer;
+background:white;
+color:#ff0080;
+font-weight:bold;
+margin-top:20px;
+}
+
+#photo{
+width:220px;
+height:220px;
+border-radius:50%;
+border:6px solid white;
+object-fit:cover;
+margin-bottom:20px;
+animation:spin 8s linear infinite;
+box-shadow:0 0 40px #ff4da6;
+}
+
+@keyframes spin{
+100%{
+transform:rotate(360deg);
+}
+}
+
+</style>
+
+<img id="photo"
+src="DSC_5032.JPG">
+
+<h1>SHWETA ❤️</h1>
+
+<p>
+
+You are officially arrested 🚨  
+for stealing Shubham's heart permanently ❤️
+
+Punishment includes:
+Daily chocolates 🍫  
+Daily Flowers 🌹
+Daily Flerts 😘
+and non-stop love forever 💖
+
+</p>
+
+<button id="loveBtn" onclick="crazyLove()">
+
+Touch Here Madam 💖
+
+</button>
+
+`;
+
+setInterval(()=>{
+
+let heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML=["❤️","💖","💕","💘"][Math.floor(Math.random()*4)];
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.fontSize=(20+Math.random()*40)+"px";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},5000);
+
+},150);
+
+}
+
+function crazyLove(){
+
+let comedyScreen=document.createElement("div");
+
+comedyScreen.innerHTML=`
+
+<style>
+
+.comedyBox{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+width:90%;
+max-width:750px;
+background:white;
+color:#ff0080;
+border-radius:35px;
+padding:35px;
+z-index:9999;
+box-shadow:0 0 50px white;
+animation:pop 0.5s;
+}
+
+.comedyBox h2{
+font-size:45px;
+margin-bottom:20px;
+}
+
+.comedyBox p{
+font-size:25px;
+color:#222;
+line-height:1.6;
+}
+
+.comedyBox button{
+background:#ff0080;
+color:white;
+margin-top:20px;
+}
+
+@keyframes pop{
+0%{transform:translate(-50%,-50%) scale(0);}
+100%{transform:translate(-50%,-50%) scale(1);}
+}
+
+</style>
+
+<div class="comedyBox">
+
+<h2 id="funTitle">
+Comedy Mode Activated 😂
+</h2>
+
+<p id="funText">
+Shubham is loading extra drama for Madam High Court...
+</p>
+
+<button onclick="nextComedy()">
+Next Comedy 🤣
+</button>
+
+</div>
+
+`;
+
+document.body.appendChild(comedyScreen);
+
+window.comedyIndex=0;
+
+window.comedyLines=[
+
+{
+title:"Emergency Alert 🚨",
+text:"Your smile is so powerful that Shubham’s heartbeat has applied for overtime 😂❤️"
+},
+
+{
+title:"System Crash 🤖",
+text:"Shubham.exe stopped working after seeing your cute face 😍"
+},
+
+{
+title:"Chocolate Audit 🍫",
+text:"Monthly chocolate expense approved. Finance department crying in corner 💸😂"
+},
+
+{
+title:"High Court Order 👩‍⚖️",
+text:"Madam Shweta orders: Daily hugs, chocolates and unlimited attention ❤️"
+},
+
+{
+title:"Breaking News 📰",
+text:"One innocent boy trapped forever after engagement. Sources say he is very happy 😂"
+},
+
+{
+title:"Love Police 🚓",
+text:"You are arrested for stealing heart, disturbing sleep and making Shubham smile alone 😭❤️"
+},
+
+{
+title:"Relationship Recharge 📱",
+text:"Your love plan includes unlimited care, unlimited drama and lifetime validity 💖"
+},
+
+{
+title:"Weather Report 🌦️",
+text:"Today’s weather forecast: 100% chance of romance and 500% chance of cuteness 😂"
+},
+
+{
+title:"Final Offer 💍",
+text:"No return. No exchange. Only forever wala love ❤️"
+}
+
+];
+
+}
+
+function nextComedy(){
+
+let title=document.getElementById("funTitle");
+
+let text=document.getElementById("funText");
+
+let item=window.comedyLines[window.comedyIndex];
+
+title.innerHTML=item.title;
+
+text.innerHTML=item.text;
+
+window.comedyIndex++;
+
+if(window.comedyIndex>=window.comedyLines.length){
+
+title.innerHTML="Final Result ❤️";
+
+text.innerHTML=`
+
+Close this website now... 🥺❤️
+
+and call your lovemate Shubham immediately 📞💖
+
+Because he is missing you already 😭
+
+Mission completed successfully:
+✔ Heart stolen  
+✔ Future husband trapped  
+✔ Unlimited love activated ❤️
+
+`;
+
+document.querySelector(".comedyBox button").innerHTML=
+"Call Shubham Now 📞😂";
+
+document.querySelector(".comedyBox button").onclick=function(){
+
+alert("Calling Lovemate Shubham ❤️📞\n\nWarning: He may start smiling continuously 😂");
+
+};
+
+}
+
+}
+
+setInterval(()=>{
+
+let h=document.createElement("div");
+
+h.className="heart";
+
+h.innerHTML="❤️";
+
+h.style.left=Math.random()*100+"vw";
+
+document.body.appendChild(h);
+
+setTimeout(()=>{
+h.remove();
+},4000);
+
+},300);
+
+</script>
+
+</body>
+</html>
